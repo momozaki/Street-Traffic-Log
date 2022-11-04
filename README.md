@@ -2,6 +2,6 @@
 # 交通量調査アプリを作ります
 
 # システムの全体像
- 
-#ブログ
+
+# ブログ
 https://scrapbox.io/Street-Traffic-Log/
