@@ -5,7 +5,7 @@
 
 # 使い方
 ## 車両の判定に使うAI
-# yolov7-STL1
+yolov7-STL1
 
 
 # ブログ
