@@ -5,7 +5,7 @@
 
 # 使い方
 ## 車両の判定に使うAI
-https://github.com/krisnarengga/yolov7-image-segmentation  
+
 これをダウンロードする
 
 
