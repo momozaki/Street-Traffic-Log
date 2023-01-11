@@ -29,7 +29,7 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 
 (その後起こったエラーの解決法https://ameblo.jp/yukozutakeshizu/entry-12741607984.html)
 
-6.python segment/predict_counting.py --weights yolov7-seg.pt --source {動画}.mp4 --view-img --trk --device 0 --nosave
+6.(例)python segment/predict_counting.py --weights yolov7-seg.pt --source {動画}.mp4 --view-img --trk --device 0 --nosave
 で起動
 
 必要に応じてオプションは付けたり消したりしてください(参照:yolov5のオプション https://zenn.dev/gotty/articles/6bd35b25cf3bd9)
