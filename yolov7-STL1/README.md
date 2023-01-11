@@ -21,7 +21,8 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 
 3.requirements.txtから必要なライブラリをインストール
 
-4.それでもまだ足りないライブラリがあるようなのでそこはエラーメッセージ見て自力でインストール
+4.それでもまだ足りないライブラリがあるようなのでそこはエラーメッセージ見てpip installで自力でインストール
 
 5.GPUを使う場合はCudaToolkit、Cudnnをインストールする
+参照:https://koubou-rei.com/entry/cuda_cudnn
 (そのあとに起こったエラーの解決法https://ameblo.jp/yukozutakeshizu/entry-12741607984.html)
