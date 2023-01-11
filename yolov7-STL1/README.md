@@ -13,7 +13,8 @@ App Demo: https://www.youtube.com/watch?v=o3imTspjnn8
 
 Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/view?usp=sharing
 
-1.https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt　からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置
+1.https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt　
+からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置
 
 2.仮想環境を作成
 
