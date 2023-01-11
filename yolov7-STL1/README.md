@@ -21,4 +21,6 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 3.requirements.txtから必要なライブラリをインストール
 
 4.それでもまだ足りないライブラリがあるようなのでそこは自力でインストール
-5.
+
+5.GPUを使う場合はCudaToolkit、Cudnnをインストールする
+(そのあとに起こったエラーの解決法https://ameblo.jp/yukozutakeshizu/entry-12741607984.html)
