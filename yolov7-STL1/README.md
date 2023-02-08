@@ -37,7 +37,8 @@ conda activate 作った環境名
 https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt  
 からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置  
 
-yolov7-STLフォルダの中に入った状態でpython segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
+メインプログラムはyolov7-STLフォルダのsegmentフォルダの中にあるpredict_counting.py  
+そのためyolov7-STLフォルダの中に入った状態でpython segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
 で実行できる。  
 ストリーミングのプロトコルはHTTP、RTSP、RTMPに対応  
 
