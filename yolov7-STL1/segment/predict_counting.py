@@ -29,17 +29,25 @@ from utils.segment.general import process_mask, scale_masks
 from utils.segment.plots import plot_masks
 from utils.torch_utils import select_device, smart_inference_mode
 
+#線分の座標
+area1_pointA = (210,560)
+area1_pointB = (1500,560)
+area1_pointC = (210,610)
+area1_pointD = (1500,610)
 
-area1_pointA = (520,400)
-area1_pointB = (780,400)
-area1_pointC = (520,450)
-area1_pointD = (780,450)
+area2_pointA = (210,160)
+area2_pointB = (1500,160)
+area2_pointC = (210,360)
+area2_pointD = (1500,360)
+
 
 label_ids = [2,3,5,7]
 array_ids = [[],[],[],[]]
 labels_name = ["car","motorcycle","bus","truck"]
 cararray_ids = []
 array_counting = [0,0,0,0]
+up_array_counting = [0,0,0,0]
+down_array_counting = [0,0,0,0]
 counting = 0
 carcounting = 0
 buscounting = 0
@@ -374,17 +382,49 @@ def run(
 
                         
                         #add vehicles counting
-                        if len(array_ids) > 0:
-                            for label_id in range(4):
-                                if the_id not in array_ids[label_id]:
+                        print(track.centroids[index2][1],track.centroids[index1][1],"the_id=",the_id)
+                        if track.centroids[index2][1] > track.centroids[index1][1]:
+                            if len(array_ids) > 0:
+                                for label_id in range(4):
+                                    if categories[np.where(identities == the_id)] == label_ids[label_id]:
+                                        if the_id not in array_ids[label_id]:
+                                                array_ids[label_id].append(the_id)
+                                                array_counting[label_id] += 1
+                                                up_array_counting[label_id] += 1
+                                                print(array_ids)
+                                                print([label_id])
+                                                print(up_array_counting)
+                                                print("track",track)
+                                                print("the_id=",the_id)
+                            else:
+                                for label_id in range(4):
                                     if categories[np.where(identities == the_id)] == label_ids[label_id]:
                                         array_ids[label_id].append(the_id)
                                         array_counting[label_id] += 1
+                                        up_array_counting[label_id] += 1
+                                        print(array_ids)
+                                        print([label_id])
+                                        print(up_array_counting)
+
                         else:
-                            for label_id in range(4):
-                                if categories[np.where(identities == the_id)] == label_ids[label_id]:
+                            if len(array_ids) > 0:
+                                for label_id in range(4):
+                                    if categories[np.where(identities == the_id)] == label_ids[label_id]:
+                                        if the_id not in array_ids[label_id]:
+                                            array_ids[label_id].append(the_id)
+                                            array_counting[label_id] += 1
+                                            down_array_counting[label_id] += 1
+                                            print(array_ids)
+                                            print([label_id])
+                                            print(down_array_counting)
+                            else:
+                                for label_id in range(4):
                                     array_ids[label_id].append(the_id)
                                     array_counting[label_id] += 1
+                                    down_array_counting[label_id] += 1
+                                    print(array_ids)
+                                    print([label_id])
+                                    print(down_array_counting)
                     
                     i = i + 1
                 
@@ -413,6 +453,9 @@ def run(
 
             cv2.line(im0,area1_pointA,area1_pointB,(0,255,0),2)
             cv2.line(im0,area1_pointC,area1_pointD,(0,255,0),2)
+
+            #cv2.line(im0,area2_pointA,area1_pointB,(0,0,255),2)
+            #cv2.line(im0,area2_pointC,area1_pointD,(0,0,255),2)
             
             color = (0,255,0)
             thickness = 2
@@ -430,7 +473,20 @@ def run(
             
             for label_id in range(4):
                 carcountingorg = (20,300+20*label_id)
-                cv2.putText(im0, labels_name[label_id]+"="+str(array_counting[label_id]), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)     
+                cv2.putText(im0, labels_name[label_id]+"="+str(array_counting[label_id]), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)  
+
+            for label_id in range(4):
+                carcountingorg = (20,400+20*label_id)
+                cv2.putText(im0, "up"+labels_name[label_id]+"="+str(up_array_counting[label_id]), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)
+
+            for label_id in range(4):
+                carcountingorg = (20,500+20*label_id)
+                cv2.putText(im0, "down"+labels_name[label_id]+"="+str(down_array_counting[label_id]), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)
+
+            # carcountingorg = (20,240)
+            # cv2.putText(im0, "up_count="+str(person_up_count), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)     
+            # carcountingorg = (20,260)
+            # cv2.putText(im0, "down_count="+str(person_down_count), carcountingorg, carcountingfont, carcountingfontScale, carcountingcolor, carcountingthickness, cv2.LINE_AA)   
 
             
             if view_img:
@@ -461,7 +517,7 @@ def run(
                     vid_writer[i].write(im0)
 
         # Print time (inference-only)
-        LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
+        #LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
 
     # Print results
     t = tuple(x.t / seen * 1E3 for x in dt)  # speeds per image
@@ -472,7 +528,7 @@ def run(
     if update:
         strip_optimizer(weights[0])  # update model (to fix SourceChangeWarning)
 
-
+#オプションの種類
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s-seg.pt', help='model path(s)')
