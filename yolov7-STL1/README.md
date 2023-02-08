@@ -30,7 +30,7 @@ conda env create -n [お好みの環境名] -f yolov7STL.yml
 
 
 仮想環境の起動  
-conda activate 作った環境名  
+conda activate [作った環境名]  
 で起動  
 仮想環境を終了する場合はconda deactivateで終了出来る  
 
