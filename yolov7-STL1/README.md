@@ -17,7 +17,7 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 # 使い方
 anacondaの導入  
 公式サイトから導入  
-https://www.javadrive.jp/python/install/index5.html
+参照:https://www.javadrive.jp/python/install/index5.html
 
 環境設定はanacondaを導入してきたときに付いてきたanaconda promptを用いる
 
@@ -38,7 +38,8 @@ https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-se
 からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置  
 
 メインプログラムはyolov7-STLフォルダの中のsegmentフォルダの中にあるpredict_counting.py  
-そのためyolov7-STLフォルダの中に入った状態でpython segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
+そのためyolov7-STLフォルダの中に入った状態で
+python segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
 で実行できる。  
 ストリーミングのプロトコルはHTTP、RTSP、RTMPに対応  
 
