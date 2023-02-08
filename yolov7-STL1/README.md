@@ -15,25 +15,31 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 
 
 # 使い方
-1.上のリンクからyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置 
+anacondaの導入
+公式サイトから導入
+https://www.javadrive.jp/python/install/index5.html
 
-2.仮想環境を作成
+環境設定はanacondaを導入してきたときに付いてきたanaconda promptを用いる
 
-3.requirements.txtから必要なライブラリをインストール
+仮想環境の作成
+anaconda　promptでyolov7-STLフォルダの中に入り、yolov7-STLフォルダの中にあるyolov7STL.ymlを使って仮想環境を構築
+yolov7-STLフォルダの中に入った状態で
+conda env create -n [お好みの環境名] -f yolov7STL.yml
+で仮想環境の構築が出来る
+参照:https://tarovlog.com/2021/01/10/create-env-anaconda/
 
-4.それでもまだ足りないライブラリがあるようなのでそこはエラーメッセージ見てpip installで自力でインストール
 
-5.GPUを使う場合はCudaToolkit、Cudnnをインストールする
-
-参照:https://koubou-rei.com/entry/cuda_cudnn
-
-(その後起こったエラーの解決法https://ameblo.jp/yukozutakeshizu/entry-12741607984.html)
-
-6.(例)python segment/predict_counting.py --weights yolov7-seg.pt --source {動画}.mp4 --view-img --trk --device 0 --nosave
+仮想環境の起動
+conda activate 作った環境名
 で起動
+仮想環境を終了する場合はconda deactivateで終了出来る
 
-必要に応じてオプションは付けたり消したりしてください(参照:yolov5のオプション https://zenn.dev/gotty/articles/6bd35b25cf3bd9)
+https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt
+からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置
 
---device 0は推論にGPUを使うオプション
+yolov7-STLフォルダの中に入った状態でpython segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave
+で実行できる。
+ストリーミングのプロトコルはHTTP、RTSP、RTMPに対応
 
-
+実行時のオプションについて
+参照:https://zenn.dev/gotty/articles/6bd35b25cf3bd9
