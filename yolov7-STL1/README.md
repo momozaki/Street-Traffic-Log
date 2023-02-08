@@ -15,8 +15,8 @@ Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/
 
 
 # 使い方
-anacondaの導入
-公式サイトから導入
+anacondaの導入  
+公式サイトから導入  
 https://www.javadrive.jp/python/install/index5.html
 
 環境設定はanacondaを導入してきたときに付いてきたanaconda promptを用いる
