@@ -7,20 +7,20 @@ anaconda promptを使って、以下の準備作業を行う。
 
 ---
 
-1. 仮想環境の作成
-  1. yolov7-STL1のフォルダーをクローン  
-  2. yolov7-STL1フォルダの中に入った状態で  
+仮想環境の作成
+yolov7-STL1のフォルダーをクローン  
+yolov7-STL1フォルダの中に入った状態で  
 conda env create -n [お好みの環境名] -f yolov7STL.yml  
 で仮想環境の構築が出来る。 
 参照:https://tarovlog.com/2021/01/10/create-env-anaconda/  
 
 
-2. 仮想環境の起動  
+仮想環境の起動  
 conda activate [作った環境名]  
 で起動。  
 仮想環境を終了する場合はconda deactivateで終了出来る。  
 
-3. https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt  
+https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt  
 からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置。 
 
 メインプログラムはyolov7-STL1フォルダの中のsegmentフォルダの中にあるpredict_counting.py  
