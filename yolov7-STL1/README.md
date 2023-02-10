@@ -3,7 +3,7 @@ anacondaの導入
 公式サイトから導入  
 参照:https://www.javadrive.jp/python/install/index5.html
 
-環境設定はanaconda promptを使って、以下の準備作業を行う
+anaconda promptを使って、以下の準備作業を行う
 
 ---
 
