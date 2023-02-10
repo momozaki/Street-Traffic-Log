@@ -3,7 +3,7 @@ anacondaの導入
 公式サイトから導入  
 参照:https://www.javadrive.jp/python/install/index5.html
 
-環境設定はanacondaを導入してきたときに付いてきたanaconda promptを用いる
+環境設定はanaconda promptを用いる
 
 仮想環境の作成  
 anaconda promptでyolov7-STLフォルダの中に入り、yolov7-STLフォルダの中にあるyolov7STL.ymlを使って仮想環境を構築  
