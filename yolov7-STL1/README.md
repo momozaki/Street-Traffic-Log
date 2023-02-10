@@ -31,7 +31,7 @@ python segment/predict_counting.py --weights yolov7-seg.pt --source [動画名�
 参照:https://zenn.dev/gotty/articles/6bd35b25cf3bd9  
 
 
-# yolov7-image-segmentation
+# yolov7-image-segmentation(元のファイルのREADme.mdです)
 This project is demonstrating simple traffic counting on toll road or highway using image segmentation technique with low light environment
 
 This app is based on YOLOV7 object detection library engine from WongKinYiu repository on https://github.com/WongKinYiu/yolov7
