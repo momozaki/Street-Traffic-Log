@@ -27,7 +27,7 @@ https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-se
 メインプログラムはyolov7-STL1フォルダの中のsegmentフォルダの中にあるpredict_counting.py  
 そのためyolov7-STL1フォルダの中に入った状態で  
 python segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
-例:python segment/predict_counting.py --weights yolov7-seg.pt --source Traffic.mp4 --view-img --trk --device 0 --nosave
+例:python segment/predict_counting.py --weights yolov7-seg.pt --source Traffic.mp4 --view-img --trk --device 0 --nosave  
 で実行できる。  
 ストリーミングのプロトコルはHTTP、RTSP、RTMPに対応。  
 
