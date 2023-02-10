@@ -13,7 +13,7 @@ yolov7-STL1フォルダの中に入った状態で
 conda env create -n [お好みの環境名] -f yolov7STL.yml  
 例:conda env create -n  -f yolov7STL.yml  
 で仮想環境の構築が出来る   
-参照(aacondaでの仮想環境構築を知りたい人向け):https://tarovlog.com/2021/01/10/create-env-anaconda/  
+参照(anacondaでの仮想環境構築を知りたい人向け):https://tarovlog.com/2021/01/10/create-env-anaconda/  
 
 
 仮想環境の起動  
