@@ -5,6 +5,8 @@ anacondaの導入
 
 環境設定はanaconda promptを用いる
 
+***
+
 仮想環境の作成  
 anaconda promptでyolov7-STLフォルダの中に入り、yolov7-STLフォルダの中にあるyolov7STL.ymlを使って仮想環境を構築  
 yolov7-STLフォルダの中に入った状態で  
