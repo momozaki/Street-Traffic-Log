@@ -7,7 +7,7 @@ anaconda promptを使って、以下の準備作業を行う。
 
 ---
 
-仮想環境の作成
+仮想環境の作成  
 yolov7-STL1のフォルダーをクローン  
 yolov7-STL1フォルダの中に入った状態で  
 conda env create -n [お好みの環境名] -f yolov7STL.yml  
