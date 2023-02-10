@@ -9,7 +9,7 @@ anaconda promptを使って、以下の準備作業を行う
 
 仮想環境の作成  
 anaconda promptでyolov7-STL1フォルダの中に入り、yolov7-STL1フォルダの中にあるyolov7STL.ymlを使って仮想環境を構築  
-yolov7-STLフォルダの中に入った状態で  
+yolov7-STL1フォルダの中に入った状態で  
 conda env create -n [お好みの環境名] -f yolov7STL.yml  
 で仮想環境の構築が出来る  
 参照:https://tarovlog.com/2021/01/10/create-env-anaconda/  
@@ -23,7 +23,7 @@ conda activate [作った環境名]
 https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-segmentation/yolov7-seg.pt  
 からyolov7-seg.ptをダウンロードしyolov5s-seg.ptと同じ階層に配置  
 
-メインプログラムはyolov7-STLフォルダの中のsegmentフォルダの中にあるpredict_counting.py  
+メインプログラムはyolov7-STL1フォルダの中のsegmentフォルダの中にあるpredict_counting.py  
 そのためyolov7-STL1フォルダの中に入った状態で  
 python segment/predict_counting.py --weights yolov7-seg.pt --source [動画名、またはストリーミングのURL] --view-img --trk --device 0 --nosave  
 で実行できる。  
