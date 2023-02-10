@@ -24,7 +24,7 @@ https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-se
 
 2.以下のコマンド実行して仮想環境を構築する
 ```bash
-(base) yolov7-STL1 > conda env create -n yolov7STL -f yolov7STL.yml
+conda env create -n yolov7STL -f yolov7STL.yml
 ```
 
 ※参照(anacondaでの仮想環境構築を知りたい人向け):https://tarovlog.com/2021/01/10/create-env-anaconda/  
@@ -33,12 +33,12 @@ https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-se
 ### 仮想環境の起動
 以下のコマンドで仮想環境を起動する。
 ```bash
-(base) > conda activate yolov7STL
+conda activate yolov7STL
 ```
 
 また、仮想環境を終了する場合は以下のコマンドで終了出来る。  
 ```bash
-(yolov7STL) > conda deactivate
+conda deactivate
 ```
 
 ## 実行
@@ -46,7 +46,7 @@ https://github.com/RizwanMunawar/yolov7-segmentation/releases/download/yolov7-se
 
 2.以下のコマンドでメインプログラムを実行する。
 ```bash
-(yolov7STL) yolov7-STL1\segment > python segment/predict_counting.py --weights yolov7-seg.pt --source Traffic.mp4 --view-img --trk --device 0 --nosave  
+python segment/predict_counting.py --weights yolov7-seg.pt --source Traffic.mp4 --view-img --trk --device 0 --nosave  
 ```
 
 - ストリーミングのプロトコルはHTTP、RTSP、RTMPに対応。  
