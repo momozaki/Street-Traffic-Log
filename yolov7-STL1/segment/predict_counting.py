@@ -177,7 +177,7 @@ def run(
     count_carcount = 0
     
     for path, im, im0s, vid_cap, s in dataset:
-        height_img,width_img,ch_img = im0s.shape
+        height_img,width_img = np.array(im0s).shape[1], np.array(im0s).shape[2]
         line_pt_1 = (0, height_img // 2)
         line_pt_2 = (width_img, height_img // 2)
         with dt[0]:
@@ -350,7 +350,7 @@ def run(
             # Stream results
             counting = 0
             carcounting = 0
-            cat = int(categories[i]) if categories is not None else 0
+            #cat = int(categories[i]) if categories is not None else 0
             im0 = annotator.result()
             
             
@@ -360,7 +360,6 @@ def run(
                 
                 the_id = 0
                 center = (0,0)
-                
                 i = 0
                 for center in centers:
                     #print(center)
@@ -502,6 +501,7 @@ def run(
                 if dataset.mode == 'image':
                     cv2.imwrite(save_path, im0)
                 else:  # 'video' or 'stream'
+                    i = len(vid_path) - 1
                     if vid_path[i] != save_path:  # new video
                         vid_path[i] = save_path
                         if isinstance(vid_writer[i], cv2.VideoWriter):
