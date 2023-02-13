@@ -2,7 +2,7 @@
 道路を走っている車両をAIでカウントする交通量調査アプリです
 
 # システムの全体像
-! (Street Traffic Log.png "STL")
+![Street Traffic Log](https://user-images.githubusercontent.com/103170011/218346227-096fb450-419c-42a8-b925-56882ad592b4.png)
 
 # 使い方
 
