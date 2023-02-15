@@ -1,5 +1,5 @@
 # Street-Traffic-Log
-道路を走っている車両をAIでカウントする交通量調査アプリです
+道路を走っている車両をAIでカウントする交通量調査アプリです。
 
 # システムの全体像
 ![Street Traffic Log](https://user-images.githubusercontent.com/103170011/218346227-096fb450-419c-42a8-b925-56882ad592b4.png)
@@ -70,6 +70,9 @@ Notes: You can download yolov7-seg from https://github.com/RizwanMunawar/yolov7-
 App Demo: https://www.youtube.com/watch?v=o3imTspjnn8
 
 Sample Video: https://drive.google.com/file/d/1irx1XrYUmA34QNKfuX8KSRPPAOB5SYtc/view?usp=sharing
+
+## Androidアプリ
+Android-RTSP-App.zipを解凍し、AndroidStudioで実行
 
 ## 車両の判定に使うAI
 yolov7-STL1
